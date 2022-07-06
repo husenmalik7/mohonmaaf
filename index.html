@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <main>
+        <section>
+            <input id="input" type="text" placeholder="Nama" />
+            <button id="button" onclick="printInput()">Submit</button>
+            <h2 id="output"></h2>
+            <section>
+    </main>
+
+    <script>
+        const input = document.getElementById('input');
+        const output = document.getElementById('output');
+
+        function printInput() {
+            output.innerHTML = `Halo kak ${input.value}, mohon maaf mengganggu waktunya`
+        }
+
+        input.addEventListener("keyup", function (event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("button").click();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
